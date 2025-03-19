@@ -29,5 +29,8 @@ public class CourseRetriever {
         List<Course> coursesToStore = svc.getCoursesFor(authorId);
         LOG.info("Retrieved following {} courses {}",coursesToStore.size(), coursesToStore);
 
+        var activeCourses = coursesToStore.stream().filter(x -> !x.isRetired()).toList();
+        LOG.info("Retrieved following {} courses {}",activeCourses.size(), activeCourses);
+
     }
 }
