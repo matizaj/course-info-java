@@ -11,6 +11,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 class CourseJdbcRepository implements CourseRepository{
     private final DataSource dataSource;
@@ -18,6 +19,9 @@ class CourseJdbcRepository implements CourseRepository{
     private static final String INSERT_COURSE = """
             MERGE INTO Courses(id, name, length, url)
             VALUES (?,?,?,?)
+            """;
+    private static final String ADD_NOTE = """
+            UPDATE Courses SET notes=? WHERE id=?;
             """;
 
     public CourseJdbcRepository(String dbFile){
@@ -46,16 +50,32 @@ class CourseJdbcRepository implements CourseRepository{
         try (var connection = dataSource.getConnection()){
             Statement statement = connection.createStatement();
             ResultSet result = statement.executeQuery("SELECT * FROM COURSES");
-            while(result.next()) {
+            int i=1;
+            while(result.next() && i<10) {
                 var course = new Course(result.getString(1),
                         result.getString(2),
                         result.getLong(3),
-                        result.getString(4) );
+                        result.getString(4),
+                        Optional.ofNullable(result.getString((5))));
+                i++;
                 courses.add(course);
             }
+            return Collections.unmodifiableList(courses);
         } catch (SQLException e) {
             throw new RepositoryException("failed to retrieve courses! ", e);
         }
-        return Collections.unmodifiableList(courses);
+
+    }
+
+    @Override
+    public void addNote(String id, String note) {
+        try (var connection = dataSource.getConnection()){
+            PreparedStatement statement = connection.prepareStatement(ADD_NOTE);
+            statement.setString(1, note);
+            statement.setString(2,id);
+            statement.execute();
+        } catch (SQLException e) {
+            throw new RepositoryException("failed to add note! ", e);
+        }
     }
 }

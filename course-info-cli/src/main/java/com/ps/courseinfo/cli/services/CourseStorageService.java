@@ -4,6 +4,7 @@ import com.ps.courseinfo.repository.CourseRepository;
 import com.ps.courseinfo.domain.Course;
 
 import java.util.List;
+import java.util.Optional;
 
 public class CourseStorageService {
     private final CourseRepository repo;
@@ -13,7 +14,7 @@ public class CourseStorageService {
 
     public void storePsCourses(List<PsCourse> psCourses) {
         for (var psCourse: psCourses) {
-            Course c = new Course(psCourse.id(), psCourse.title(), psCourse.durationInMinutes(), psCourse.contentUrl());
+            Course c = new Course(psCourse.id(), psCourse.title(), psCourse.durationInMinutes(), psCourse.contentUrl(), Optional.of(""));
             repo.save(c);
         }
     }

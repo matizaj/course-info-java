@@ -1,10 +1,13 @@
 package com.ps.courseinfo.domain;
 
-public record Course(String id, String name, long length, String url) {
+import java.util.Optional;
+
+public record Course(String id, String name, long length, String url, Optional<String> note) {
     public Course{
         filled(id);
         filled(name);
         filled(url);
+        note.ifPresent(Course::filled);
     }
 
     private static void filled(String s) {

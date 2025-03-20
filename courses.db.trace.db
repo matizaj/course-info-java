@@ -601,3 +601,33 @@ Caused by: org.h2.mvstore.MVStoreException: The write format 2 is smaller than t
 	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
 	at org.h2.mvstore.db.Store.<init>(Store.java:133)
 	... 11 more
+2025-03-20 21:07:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Błąd konwersji danych "03:33:07.4423350"
+Data conversion error converting "03:33:07.4423350" [22018-214]
+2025-03-20 21:07:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Błąd konwersji danych "03:33:07.4423350"
+Data conversion error converting "03:33:07.4423350" [22018-214]
+2025-03-20 21:09:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Błąd konwersji danych "03:33:07.4423350"
+Data conversion error converting "03:33:07.4423350" [22018-214]
+2025-03-20 21:10:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Błąd konwersji danych "03:33:07.4423350"
+Data conversion error converting "03:33:07.4423350" [22018-214]
+2025-03-20 21:11:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Błąd konwersji danych "03:33:07.4423350"
+Data conversion error converting "03:33:07.4423350" [22018-214]
+2025-03-20 21:12:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Błąd konwersji danych "03:33:07.4423350"
+Data conversion error converting "03:33:07.4423350" [22018-214]
+2025-03-20 21:12:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Błąd konwersji danych "03:33:07.4423350"
+Data conversion error converting "03:33:07.4423350" [22018-214]
+2025-03-20 21:13:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Błąd konwersji danych "03:33:07.4423350"
+Data conversion error converting "03:33:07.4423350" [22018-214]
+2025-03-20 21:14:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Błąd konwersji danych "03:33:07.4423350"
+Data conversion error converting "03:33:07.4423350" [22018-214]
+2025-03-20 21:14:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Błąd konwersji danych "03:33:07.4423350"
+Data conversion error converting "03:33:07.4423350" [22018-214]
