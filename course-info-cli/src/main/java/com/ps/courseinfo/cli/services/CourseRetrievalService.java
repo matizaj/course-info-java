@@ -9,7 +9,6 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CourseRetrievalService {
@@ -19,7 +18,7 @@ public class CourseRetrievalService {
             .newBuilder()
             .followRedirects(HttpClient.Redirect.ALWAYS)
             .build();
-    public List<Course> getCoursesFor(String authorId){
+    public List<PsCourse> getCoursesFor(String authorId){
         HttpRequest request = HttpRequest
                 .newBuilder(URI.create(url.formatted(authorId)))
                 .GET().build();
@@ -35,8 +34,8 @@ public class CourseRetrievalService {
         }
     }
 
-    private static List<Course> getCourses(HttpResponse<String> response) throws JsonProcessingException {
-        JavaType returnType = mapper.getTypeFactory().constructCollectionType(List.class, Course.class);
+    private static List<PsCourse> getCourses(HttpResponse<String> response) throws JsonProcessingException {
+        JavaType returnType = mapper.getTypeFactory().constructCollectionType(List.class, PsCourse.class);
         return mapper.readValue(response.body(), returnType);
     }
 }

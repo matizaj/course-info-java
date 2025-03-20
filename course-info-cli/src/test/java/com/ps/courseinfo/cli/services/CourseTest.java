@@ -1,6 +1,5 @@
 package com.ps.courseinfo.cli.services;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -14,7 +13,7 @@ class CourseTest {
             00:00:37, 0
             """)
     void durationInMinutes(String input, long expected) {
-        var course = new Course("id", "test course", input, "url", false);
+        var course = new PsCourse("id", "test course", input, "url", false);
         assertEquals(expected, course.durationInMinutes());
     }
 

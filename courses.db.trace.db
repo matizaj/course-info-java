@@ -1,0 +1,603 @@
+2025-03-19 14:30:15 database: flush
+org.h2.message.DbException: Błąd ogólny: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]"
+General error: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]" [50000-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at com.ps.courseinfo.repository.CourseJdbcRepository.save(CourseJdbcRepository.java:30)
+	at com.ps.courseinfo.cli.services.CourseStorageService.storePsCourses(CourseStorageService.java:17)
+	at com.ps.courseinfo.cli.CourseRetriever.retrieveCourses(CourseRetriever.java:38)
+	at com.ps.courseinfo.cli.CourseRetriever.main(CourseRetriever.java:21)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Błąd ogólny: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]"
+General error: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]" [50000-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.FileStore.getUnsupportedWriteFormatException(FileStore.java:944)
+	at org.h2.mvstore.FileStore.processCommonHeaderAttributes(FileStore.java:547)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:227)
+	at org.h2.mvstore.FileStore.start(FileStore.java:917)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	... 13 more
+2025-03-19 14:30:15 database: opening C:/Users/AC/Development/java-ps/course-info/courses.db
+org.h2.message.DbException: Nieprawidłowa wersja pliku bazy danych lub nieprawidłowy nagłówek pliku "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db"
+Unsupported database file version or invalid file header in file "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db" [90048-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:158)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at com.ps.courseinfo.repository.CourseJdbcRepository.save(CourseJdbcRepository.java:30)
+	at com.ps.courseinfo.cli.services.CourseStorageService.storePsCourses(CourseStorageService.java:17)
+	at com.ps.courseinfo.cli.CourseRetriever.retrieveCourses(CourseRetriever.java:38)
+	at com.ps.courseinfo.cli.CourseRetriever.main(CourseRetriever.java:21)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Nieprawidłowa wersja pliku bazy danych lub nieprawidłowy nagłówek pliku "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db"
+Unsupported database file version or invalid file header in file "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db" [90048-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 14 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.FileStore.getUnsupportedWriteFormatException(FileStore.java:944)
+	at org.h2.mvstore.FileStore.processCommonHeaderAttributes(FileStore.java:547)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:227)
+	at org.h2.mvstore.FileStore.start(FileStore.java:917)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	... 11 more
+2025-03-19 14:31:08 database: flush
+org.h2.message.DbException: Błąd ogólny: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]"
+General error: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]" [50000-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at com.ps.courseinfo.repository.CourseJdbcRepository.save(CourseJdbcRepository.java:30)
+	at com.ps.courseinfo.cli.services.CourseStorageService.storePsCourses(CourseStorageService.java:17)
+	at com.ps.courseinfo.cli.CourseRetriever.retrieveCourses(CourseRetriever.java:38)
+	at com.ps.courseinfo.cli.CourseRetriever.main(CourseRetriever.java:21)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Błąd ogólny: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]"
+General error: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]" [50000-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.FileStore.getUnsupportedWriteFormatException(FileStore.java:944)
+	at org.h2.mvstore.FileStore.processCommonHeaderAttributes(FileStore.java:547)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:227)
+	at org.h2.mvstore.FileStore.start(FileStore.java:917)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	... 13 more
+2025-03-19 14:31:08 database: opening C:/Users/AC/Development/java-ps/course-info/courses.db
+org.h2.message.DbException: Nieprawidłowa wersja pliku bazy danych lub nieprawidłowy nagłówek pliku "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db"
+Unsupported database file version or invalid file header in file "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db" [90048-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:158)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at com.ps.courseinfo.repository.CourseJdbcRepository.save(CourseJdbcRepository.java:30)
+	at com.ps.courseinfo.cli.services.CourseStorageService.storePsCourses(CourseStorageService.java:17)
+	at com.ps.courseinfo.cli.CourseRetriever.retrieveCourses(CourseRetriever.java:38)
+	at com.ps.courseinfo.cli.CourseRetriever.main(CourseRetriever.java:21)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Nieprawidłowa wersja pliku bazy danych lub nieprawidłowy nagłówek pliku "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db"
+Unsupported database file version or invalid file header in file "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db" [90048-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 14 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.FileStore.getUnsupportedWriteFormatException(FileStore.java:944)
+	at org.h2.mvstore.FileStore.processCommonHeaderAttributes(FileStore.java:547)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:227)
+	at org.h2.mvstore.FileStore.start(FileStore.java:917)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	... 11 more
+2025-03-19 14:34:34 database: flush
+org.h2.message.DbException: Błąd ogólny: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]"
+General error: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]" [50000-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at com.ps.courseinfo.repository.CourseJdbcRepository.save(CourseJdbcRepository.java:30)
+	at com.ps.courseinfo.cli.services.CourseStorageService.storePsCourses(CourseStorageService.java:17)
+	at com.ps.courseinfo.cli.CourseRetriever.retrieveCourses(CourseRetriever.java:38)
+	at com.ps.courseinfo.cli.CourseRetriever.main(CourseRetriever.java:21)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Błąd ogólny: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]"
+General error: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]" [50000-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.FileStore.getUnsupportedWriteFormatException(FileStore.java:944)
+	at org.h2.mvstore.FileStore.processCommonHeaderAttributes(FileStore.java:547)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:227)
+	at org.h2.mvstore.FileStore.start(FileStore.java:917)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	... 13 more
+2025-03-19 14:34:34 database: opening C:/Users/AC/Development/java-ps/course-info/courses.db
+org.h2.message.DbException: Nieprawidłowa wersja pliku bazy danych lub nieprawidłowy nagłówek pliku "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db"
+Unsupported database file version or invalid file header in file "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db" [90048-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:158)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at com.ps.courseinfo.repository.CourseJdbcRepository.save(CourseJdbcRepository.java:30)
+	at com.ps.courseinfo.cli.services.CourseStorageService.storePsCourses(CourseStorageService.java:17)
+	at com.ps.courseinfo.cli.CourseRetriever.retrieveCourses(CourseRetriever.java:38)
+	at com.ps.courseinfo.cli.CourseRetriever.main(CourseRetriever.java:21)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Nieprawidłowa wersja pliku bazy danych lub nieprawidłowy nagłówek pliku "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db"
+Unsupported database file version or invalid file header in file "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db" [90048-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 14 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.FileStore.getUnsupportedWriteFormatException(FileStore.java:944)
+	at org.h2.mvstore.FileStore.processCommonHeaderAttributes(FileStore.java:547)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:227)
+	at org.h2.mvstore.FileStore.start(FileStore.java:917)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	... 11 more
+2025-03-19 14:35:00 database: flush
+org.h2.message.DbException: Błąd ogólny: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]"
+General error: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]" [50000-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at com.ps.courseinfo.repository.CourseJdbcRepository.save(CourseJdbcRepository.java:30)
+	at com.ps.courseinfo.cli.services.CourseStorageService.storePsCourses(CourseStorageService.java:17)
+	at com.ps.courseinfo.cli.CourseRetriever.retrieveCourses(CourseRetriever.java:38)
+	at com.ps.courseinfo.cli.CourseRetriever.main(CourseRetriever.java:21)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Błąd ogólny: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]"
+General error: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]" [50000-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.FileStore.getUnsupportedWriteFormatException(FileStore.java:944)
+	at org.h2.mvstore.FileStore.processCommonHeaderAttributes(FileStore.java:547)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:227)
+	at org.h2.mvstore.FileStore.start(FileStore.java:917)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	... 13 more
+2025-03-19 14:35:00 database: opening C:/Users/AC/Development/java-ps/course-info/courses.db
+org.h2.message.DbException: Nieprawidłowa wersja pliku bazy danych lub nieprawidłowy nagłówek pliku "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db"
+Unsupported database file version or invalid file header in file "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db" [90048-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:158)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at com.ps.courseinfo.repository.CourseJdbcRepository.save(CourseJdbcRepository.java:30)
+	at com.ps.courseinfo.cli.services.CourseStorageService.storePsCourses(CourseStorageService.java:17)
+	at com.ps.courseinfo.cli.CourseRetriever.retrieveCourses(CourseRetriever.java:38)
+	at com.ps.courseinfo.cli.CourseRetriever.main(CourseRetriever.java:21)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Nieprawidłowa wersja pliku bazy danych lub nieprawidłowy nagłówek pliku "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db"
+Unsupported database file version or invalid file header in file "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db" [90048-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 14 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.FileStore.getUnsupportedWriteFormatException(FileStore.java:944)
+	at org.h2.mvstore.FileStore.processCommonHeaderAttributes(FileStore.java:547)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:227)
+	at org.h2.mvstore.FileStore.start(FileStore.java:917)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	... 11 more
+2025-03-19 14:36:46 database: flush
+org.h2.message.DbException: Błąd ogólny: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]"
+General error: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]" [50000-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at com.ps.courseinfo.repository.CourseJdbcRepository.save(CourseJdbcRepository.java:30)
+	at com.ps.courseinfo.cli.services.CourseStorageService.storePsCourses(CourseStorageService.java:17)
+	at com.ps.courseinfo.cli.CourseRetriever.retrieveCourses(CourseRetriever.java:38)
+	at com.ps.courseinfo.cli.CourseRetriever.main(CourseRetriever.java:21)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Błąd ogólny: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]"
+General error: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]" [50000-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.FileStore.getUnsupportedWriteFormatException(FileStore.java:944)
+	at org.h2.mvstore.FileStore.processCommonHeaderAttributes(FileStore.java:547)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:227)
+	at org.h2.mvstore.FileStore.start(FileStore.java:917)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	... 13 more
+2025-03-19 14:36:46 database: opening C:/Users/AC/Development/java-ps/course-info/courses.db
+org.h2.message.DbException: Nieprawidłowa wersja pliku bazy danych lub nieprawidłowy nagłówek pliku "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db"
+Unsupported database file version or invalid file header in file "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db" [90048-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:158)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at com.ps.courseinfo.repository.CourseJdbcRepository.save(CourseJdbcRepository.java:30)
+	at com.ps.courseinfo.cli.services.CourseStorageService.storePsCourses(CourseStorageService.java:17)
+	at com.ps.courseinfo.cli.CourseRetriever.retrieveCourses(CourseRetriever.java:38)
+	at com.ps.courseinfo.cli.CourseRetriever.main(CourseRetriever.java:21)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Nieprawidłowa wersja pliku bazy danych lub nieprawidłowy nagłówek pliku "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db"
+Unsupported database file version or invalid file header in file "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db" [90048-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 14 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.FileStore.getUnsupportedWriteFormatException(FileStore.java:944)
+	at org.h2.mvstore.FileStore.processCommonHeaderAttributes(FileStore.java:547)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:227)
+	at org.h2.mvstore.FileStore.start(FileStore.java:917)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	... 11 more
+2025-03-19 14:38:45 database: flush
+org.h2.message.DbException: Błąd ogólny: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]"
+General error: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]" [50000-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at com.ps.courseinfo.repository.CourseJdbcRepository.save(CourseJdbcRepository.java:30)
+	at com.ps.courseinfo.cli.services.CourseStorageService.storePsCourses(CourseStorageService.java:17)
+	at com.ps.courseinfo.cli.CourseRetriever.retrieveCourses(CourseRetriever.java:38)
+	at com.ps.courseinfo.cli.CourseRetriever.main(CourseRetriever.java:21)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Błąd ogólny: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]"
+General error: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]" [50000-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.FileStore.getUnsupportedWriteFormatException(FileStore.java:944)
+	at org.h2.mvstore.FileStore.processCommonHeaderAttributes(FileStore.java:547)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:227)
+	at org.h2.mvstore.FileStore.start(FileStore.java:917)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	... 13 more
+2025-03-19 14:38:45 database: opening C:/Users/AC/Development/java-ps/course-info/courses.db
+org.h2.message.DbException: Nieprawidłowa wersja pliku bazy danych lub nieprawidłowy nagłówek pliku "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db"
+Unsupported database file version or invalid file header in file "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db" [90048-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:158)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at com.ps.courseinfo.repository.CourseJdbcRepository.save(CourseJdbcRepository.java:30)
+	at com.ps.courseinfo.cli.services.CourseStorageService.storePsCourses(CourseStorageService.java:17)
+	at com.ps.courseinfo.cli.CourseRetriever.retrieveCourses(CourseRetriever.java:38)
+	at com.ps.courseinfo.cli.CourseRetriever.main(CourseRetriever.java:21)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Nieprawidłowa wersja pliku bazy danych lub nieprawidłowy nagłówek pliku "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db"
+Unsupported database file version or invalid file header in file "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db" [90048-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 14 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.FileStore.getUnsupportedWriteFormatException(FileStore.java:944)
+	at org.h2.mvstore.FileStore.processCommonHeaderAttributes(FileStore.java:547)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:227)
+	at org.h2.mvstore.FileStore.start(FileStore.java:917)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	... 11 more
+2025-03-19 14:39:20 database: flush
+org.h2.message.DbException: Błąd ogólny: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]"
+General error: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]" [50000-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at com.ps.courseinfo.repository.CourseJdbcRepository.save(CourseJdbcRepository.java:30)
+	at com.ps.courseinfo.cli.services.CourseStorageService.storePsCourses(CourseStorageService.java:17)
+	at com.ps.courseinfo.cli.CourseRetriever.retrieveCourses(CourseRetriever.java:38)
+	at com.ps.courseinfo.cli.CourseRetriever.main(CourseRetriever.java:21)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Błąd ogólny: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]"
+General error: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]" [50000-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.FileStore.getUnsupportedWriteFormatException(FileStore.java:944)
+	at org.h2.mvstore.FileStore.processCommonHeaderAttributes(FileStore.java:547)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:227)
+	at org.h2.mvstore.FileStore.start(FileStore.java:917)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	... 13 more
+2025-03-19 14:39:20 database: opening C:/Users/AC/Development/java-ps/course-info/courses.db
+org.h2.message.DbException: Nieprawidłowa wersja pliku bazy danych lub nieprawidłowy nagłówek pliku "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db"
+Unsupported database file version or invalid file header in file "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db" [90048-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:158)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at com.ps.courseinfo.repository.CourseJdbcRepository.save(CourseJdbcRepository.java:30)
+	at com.ps.courseinfo.cli.services.CourseStorageService.storePsCourses(CourseStorageService.java:17)
+	at com.ps.courseinfo.cli.CourseRetriever.retrieveCourses(CourseRetriever.java:38)
+	at com.ps.courseinfo.cli.CourseRetriever.main(CourseRetriever.java:21)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Nieprawidłowa wersja pliku bazy danych lub nieprawidłowy nagłówek pliku "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db"
+Unsupported database file version or invalid file header in file "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db" [90048-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 14 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.FileStore.getUnsupportedWriteFormatException(FileStore.java:944)
+	at org.h2.mvstore.FileStore.processCommonHeaderAttributes(FileStore.java:547)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:227)
+	at org.h2.mvstore.FileStore.start(FileStore.java:917)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	... 11 more
+2025-03-19 14:39:31 database: flush
+org.h2.message.DbException: Błąd ogólny: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]"
+General error: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]" [50000-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at com.ps.courseinfo.repository.CourseJdbcRepository.save(CourseJdbcRepository.java:30)
+	at com.ps.courseinfo.cli.services.CourseStorageService.storePsCourses(CourseStorageService.java:17)
+	at com.ps.courseinfo.cli.CourseRetriever.retrieveCourses(CourseRetriever.java:38)
+	at com.ps.courseinfo.cli.CourseRetriever.main(CourseRetriever.java:21)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Błąd ogólny: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]"
+General error: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]" [50000-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.FileStore.getUnsupportedWriteFormatException(FileStore.java:944)
+	at org.h2.mvstore.FileStore.processCommonHeaderAttributes(FileStore.java:547)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:227)
+	at org.h2.mvstore.FileStore.start(FileStore.java:917)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	... 13 more
+2025-03-19 14:39:31 database: opening C:/Users/AC/Development/java-ps/course-info/courses.db
+org.h2.message.DbException: Nieprawidłowa wersja pliku bazy danych lub nieprawidłowy nagłówek pliku "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db"
+Unsupported database file version or invalid file header in file "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db" [90048-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:158)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at com.ps.courseinfo.repository.CourseJdbcRepository.save(CourseJdbcRepository.java:30)
+	at com.ps.courseinfo.cli.services.CourseStorageService.storePsCourses(CourseStorageService.java:17)
+	at com.ps.courseinfo.cli.CourseRetriever.retrieveCourses(CourseRetriever.java:38)
+	at com.ps.courseinfo.cli.CourseRetriever.main(CourseRetriever.java:21)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Nieprawidłowa wersja pliku bazy danych lub nieprawidłowy nagłówek pliku "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db"
+Unsupported database file version or invalid file header in file "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db" [90048-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 14 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.FileStore.getUnsupportedWriteFormatException(FileStore.java:944)
+	at org.h2.mvstore.FileStore.processCommonHeaderAttributes(FileStore.java:547)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:227)
+	at org.h2.mvstore.FileStore.start(FileStore.java:917)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	... 11 more
+2025-03-19 14:45:27 database: flush
+org.h2.message.DbException: Błąd ogólny: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]"
+General error: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]" [50000-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1547)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at com.ps.courseinfo.repository.CourseJdbcRepository.save(CourseJdbcRepository.java:30)
+	at com.ps.courseinfo.cli.services.CourseStorageService.storePsCourses(CourseStorageService.java:17)
+	at com.ps.courseinfo.cli.CourseRetriever.retrieveCourses(CourseRetriever.java:38)
+	at com.ps.courseinfo.cli.CourseRetriever.main(CourseRetriever.java:21)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Błąd ogólny: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]"
+General error: "org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]" [50000-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.FileStore.getUnsupportedWriteFormatException(FileStore.java:944)
+	at org.h2.mvstore.FileStore.processCommonHeaderAttributes(FileStore.java:547)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:227)
+	at org.h2.mvstore.FileStore.start(FileStore.java:917)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	... 13 more
+2025-03-19 14:45:27 database: opening C:/Users/AC/Development/java-ps/course-info/courses.db
+org.h2.message.DbException: Nieprawidłowa wersja pliku bazy danych lub nieprawidłowy nagłówek pliku "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db"
+Unsupported database file version or invalid file header in file "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db" [90048-220]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:158)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at com.ps.courseinfo.repository.CourseJdbcRepository.save(CourseJdbcRepository.java:30)
+	at com.ps.courseinfo.cli.services.CourseStorageService.storePsCourses(CourseStorageService.java:17)
+	at com.ps.courseinfo.cli.CourseRetriever.retrieveCourses(CourseRetriever.java:38)
+	at com.ps.courseinfo.cli.CourseRetriever.main(CourseRetriever.java:21)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Nieprawidłowa wersja pliku bazy danych lub nieprawidłowy nagłówek pliku "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db"
+Unsupported database file version or invalid file header in file "C:/Users/AC/Development/java-ps/course-info/courses.db.mv.db" [90048-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 14 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 2 is smaller than the supported format 3 [2.2.220/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.FileStore.getUnsupportedWriteFormatException(FileStore.java:944)
+	at org.h2.mvstore.FileStore.processCommonHeaderAttributes(FileStore.java:547)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:227)
+	at org.h2.mvstore.FileStore.start(FileStore.java:917)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2036)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	... 11 more

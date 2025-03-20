@@ -1,7 +1,9 @@
 package com.ps.courseinfo.cli;
 
-import com.ps.courseinfo.cli.services.Course;
+import com.ps.courseinfo.cli.services.PsCourse;
 import com.ps.courseinfo.cli.services.CourseRetrievalService;
+import com.ps.courseinfo.cli.services.CourseStorageService;
+import com.ps.courseinfo.repository.CourseRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,11 +28,15 @@ public class CourseRetriever {
     private static void retrieveCourses(String authorId) {
         LOG.info("Retrieving courses for author: '{}'", authorId);
         CourseRetrievalService svc = new CourseRetrievalService();
-        List<Course> coursesToStore = svc.getCoursesFor(authorId);
+        List<PsCourse> coursesToStore = svc.getCoursesFor(authorId);
         LOG.info("Retrieved following {} courses {}",coursesToStore.size(), coursesToStore);
+        CourseRepository repo = CourseRepository.openCourseRepository("./courses.db");
+        CourseStorageService storageSvc = new CourseStorageService(repo);
 
         var activeCourses = coursesToStore.stream().filter(x -> !x.isRetired()).toList();
         LOG.info("Retrieved following {} courses {}",activeCourses.size(), activeCourses);
+        storageSvc.storePsCourses(activeCourses);
+        LOG.info("Courses are successfully stored");
 
     }
 }
