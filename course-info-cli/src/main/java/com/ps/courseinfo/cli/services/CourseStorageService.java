@@ -14,7 +14,7 @@ public class CourseStorageService {
 
     public void storePsCourses(List<PsCourse> psCourses) {
         for (var psCourse: psCourses) {
-            Course c = new Course(psCourse.id(), psCourse.title(), psCourse.durationInMinutes(), psCourse.contentUrl(), Optional.of(""));
+            Course c = new Course(psCourse.id(), psCourse.title(), psCourse.durationInMinutes(), psCourse.contentUrl(), Optional.of("note1"));
             repo.save(c);
         }
     }
